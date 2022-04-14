@@ -1,0 +1,232 @@
+body{
+    /* background: linear-gradient(to bottom, #009999 0%, #66ffff 100%); */
+  }
+
+  /* Adding color to first section */
+  #one{
+    background-color: #E6358B;
+    
+  }
+
+  /* Adding color to second section */
+  #two{
+    background-color: #22A2AF;
+  }
+
+  /* Adding color to third section */
+  #three{
+    background-color: #7CEC9F;
+  }
+
+  /* General styling to our main section */
+  .content{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* Styling to each individual section */
+  .section{
+    width: 70%;
+    height: 70%;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+  /* For hiding scoll bar */
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
+  #sticky-div{
+    position : sticky;
+    top :0%;
+    font-size: 30px;
+    color: white;
+    background-color: #6B5;
+  }
+
+  .heading{
+    color: red;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .img{
+    width: 50%;
+    height: 50%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.navbar-brand
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: black;
+    font-weight: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  li {
+    border-right: 1px solid #bbb;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 33%;
+    /* width:450px; */
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+   /* Style the counter cards */
+   .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    /* padding: 200px; */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 16px;
+    background-color:rgba(128, 128, 128, 0.61);
+    margin-top: 20px;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .security
+  {
+    height:20px;
+    width:20px
+  }
+
+  .logo
+  {
+    width:20px;
+    height:20px
+  }
