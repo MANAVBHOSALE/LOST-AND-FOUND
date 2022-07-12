@@ -2,16 +2,12 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 // create posts schema -- // moved from app.js //
 const lostSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
-    },
     email:{
         type:String,
         required:true,
     },
     mobile_no:{
-        type:String,
+        type:Number,
         required:true,
     },
     itemname: {

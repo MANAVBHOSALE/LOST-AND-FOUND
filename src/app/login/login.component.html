@@ -1,25 +1,68 @@
-
-<div class="container login-container">
-            <div class="row">
-                <div class="col-md-6 login-form-1">
-                    <h3>Login for Form</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" (click)="login()" />
-                        </div>
-                        <div class="form-group">
-                            <a href="#" class="ForgetPwd">Forget Password?</a>
-                        </div>
-                    </form>
-                </div>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form id = "formData" [formGroup]="loginForm" #loginData="ngForm" (ngSubmit)="loginUser(loginData.value)">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form1Example13" formControlName="email" name = "email" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" required/> 
+              <!-- <label class="form-label" for="form3Example3">Email address</label> -->
             </div>
-</div>
+             <!--Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form1Example2" formControlName="password" name = "password" class="form-control form-control-lg"
+                placeholder="Enter password" required/>
+              <!-- <label class="form-label" for="form3Example4">Password</label>  -->
+            </div>
+          
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" value = "login" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                LOGIN
+              </button>
+
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? 
+                <a class="link-danger" href="register">
+                  Register
+                </a>
+              </p>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- <div class="container login-container">
+    <div class="row">
+        <div class="text-center col-md-10 login-form-1">
+            <h3>Login for Form</h3>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Login" (click)="login()" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">Forget Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
 
      
 <!--   

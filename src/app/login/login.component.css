@@ -1,4 +1,24 @@
-.login-container{
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+input.ng-invalid.gn-dirty{
+    border-color: #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+/* .login-container{
     margin-top: 5%;
     margin-bottom: 5%;
      position: absolute;
@@ -51,7 +71,7 @@
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
-}
+} */
 
 
 /* Body {  

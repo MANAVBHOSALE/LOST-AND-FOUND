@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-// create posts schema -- // moved from app.js //
+
 const foundSchema = new mongoose.Schema({
-    name:{
+    username:{
         type:String,
         required:true,
     },

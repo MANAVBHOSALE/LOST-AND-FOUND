@@ -9,6 +9,7 @@ import { ResponsesComponent } from './responses/responses.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [{
   path: ' ',
@@ -48,9 +49,15 @@ const routes: Routes = [{
   component: HomeComponent 
 },
 {
-  path: '**',
-  component: PageNotFoundComponent 
-}];
+  path: 'register',
+  component: RegisterComponent 
+},
+// {
+//   path: '**',
+//   component: AppComponent, 
+//   pathMatch: 'full'
+// }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

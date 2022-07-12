@@ -1,18 +1,20 @@
 const mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
-// create posts schema -- // moved from app.js //
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required:true,
-        unique:true
+        default: null
     },
     password: {
         type: String,
-        required:true,
+        default: null,
+        required:true
     },
-    
-},{
-    collection:'user'
+    email: {
+        type: String,
+        default: null,
+        required:true
+    }
 });
+
 module.exports = mongoose.model('user', userSchema);

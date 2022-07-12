@@ -1,0 +1,124 @@
+
+<section class="vh-100">
+  <div *ngIf = "alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> You have registered Successfully.
+    <button (click) = "closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form id = "formData" #userData="ngForm" (ngSubmit)="registerUser(userData.value)">
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <input type="name" id="form1Example1" autocomplete="off" name="username" class="form-control form-control-lg"
+                  placeholder="Enter User Name " ngModel/>
+                <!-- <label class="form-label" for="form3Example3">User Name</label> -->
+            </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" autocomplete="off" name="password"id="form1Example2" class="form-control form-control-lg"
+                  placeholder="Enter password" ngModel/>
+                <!-- <label class="form-label" for="form3Example4">Password</label> -->
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form1Example3" autocomplete="off" name="email" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" ngModel/>
+              <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" value="Register" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">REGISTER</button>
+              <!-- <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register"
+                  class="link-danger">Register</a></p> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <div>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div> -->
+  </section>
+
+<!-- 
+<div class="container login-container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h1>Register</h1>
+                    <p class="text-h3"> Lost and Found Website </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col mt-4">
+                    <input type="text" class="form-control" placeholder="User Name">
+                </div>
+            </div>
+            <div class="row align-items-center mt-4">
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+            </div>
+            <div class="row align-items-center mt-4">
+                <div class="col">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <div class="row justify-content-start mt-4">
+                <div class="col">
+                    <div class="form-check"> </div>
+                        <button class="btn btn-primary mt-4">Submit</button>
+                </div>
+            </div>
+        </div>
+</div> -->
+
+<!-- 
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <h3>Login for Form</h3>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Login" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">Forget Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+

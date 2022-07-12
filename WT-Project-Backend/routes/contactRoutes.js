@@ -1,6 +1,8 @@
 const express = require('express');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
-const contact = require('../models/contact')
+const contact = require('../models/contact');
 // import the controller file for fcuntions
 
 router.post('/', (req, res) => {
