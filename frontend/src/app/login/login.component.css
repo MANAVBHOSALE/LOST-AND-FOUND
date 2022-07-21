@@ -18,7 +18,7 @@ input.ng-invalid.gn-dirty{
     border-color: #e91e63 !important;
     box-shadow: 0 1px 0 0 #e91e63 !important;
 }
-/* .login-container{
+.login-container{
     margin-top: 5%;
     margin-bottom: 5%;
      position: absolute;
@@ -71,9 +71,12 @@ input.ng-invalid.gn-dirty{
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
-} */
+}
 
-
+.container {   
+    padding: 25px;   
+    background-color: lightblue;
+}
 /* Body {  
     font-family: Calibri, Helvetica, sans-serif;  
     background-color: pink;  

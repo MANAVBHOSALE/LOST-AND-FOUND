@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
   alert : boolean = false
-  constructor(private authService : AuthService) { }
+  constructor(private authService : AuthService,  private _router: Router) { }
 
   ngOnInit(): void {
   }
   registerUser(user: any){
     this.authService.registerUser(user);
+    this._router.navigate(['/login']);
+    this.alert = true;
   }
   closeAlert(){
     this.alert = false

@@ -93,34 +93,6 @@ export class LostItemComponent implements OnInit {
       }
     })
   }
-  // onFileSelect(event: { target: { files: any[]; }; }) {
-  //   const file = event.target.files[0];
-  //   this.fileInputLabel = file.itemname;
-  //   this.lostForm.get('itemimage').setValue(file);
-  // }
-  // onFormSubmit(): void {
-  //   if (!this.lostForm.get('itemimage').value) {
-  //     alert('Please fill valid details!');
-  //     return false;
-  //   }
-
-  //   const formData = new FormData();
-  //   formData.append('uploadedImage', this.lostForm.get('uploadedImage').value);
-  //   formData.append('agentId', '007');
-
-  //   this.http
-  //     .post<any>('http://localhost:3000/lost', formData).subscribe(response => {
-  //       console.log(response);
-  //       if (response.statusCode === 200) {
-  //         // Reset the file input
-  //         this.uploadFileInput.nativeElement.value = "";
-  //         this.fileInputLabel = undefined;
-  //       }
-  //     }, er => {
-  //       console.log(er);
-  //       alert(er.error.error);
-  //     });
-  // }
   // getGalleryDetails(id: string): void {
   //   this.authService.getGalleryById(id)
   //     .subscribe((data: any) => {
@@ -142,22 +114,6 @@ export class LostItemComponent implements OnInit {
   //       this.isLoadingResults = false;
   //     });
 
-
-    // this.authService.lostUser(this.lostForm.value)
-    //    .subscribe(res => {
-    //     console.log('result is ', res);
-    //     if((res as {[key: string]: any})['status']){
-    //       alert('LOGIN SUCCESSFUL');
-    //       localStorage.setItem('token', (res as {[key: string]: any})['token']);
-    //       this.lostForm.reset();
-    //       this._router.navigate(['/home']);
-    //     }
-    //     else{
-    //       alert('Email of password is Incorrect!');
-    //     }
-    //    },error=>console.error(error));
-    //this.authService.lostUser(user);
-  //}
   // onFileSelect(event: Event){
   //     //console.log('File is Selected');
   //     const file = (event.target as HTMLInputElement).files[0];

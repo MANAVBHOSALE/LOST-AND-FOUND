@@ -2,24 +2,12 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const foundSchema = new mongoose.Schema({
-    username:{
-        type:String,
-        required:true,
-    },
-    email:{
-        type:String,
-        required:true,
-    },
-    mobile_no:{
-        type:String,
-        required:true,
-    },
     itemname: {
         type: String,
         required:true,
         
     },
-    property: {
+    question: {
         type: String,
         required:true,
     },

@@ -14,7 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { AuthService } from './auth.service';
 
 @NgModule({
@@ -37,6 +37,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
       RouterModule.forRoot([
         {path: ' ',  redirectTo: '/LoginComponent', pathMatch: 'full'}
       ])

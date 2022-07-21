@@ -10,13 +10,9 @@ const contactSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
-    country: {
-        type: String,
-        required:true,
-    },
     subject: {
         type: String,
-        required:true,
+        //required:true,
     },   
 },{
     collection:'contact'

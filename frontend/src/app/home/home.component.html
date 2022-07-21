@@ -20,14 +20,14 @@
 </div> -->
 
 
-<div class="container mx-auto mt-4">
+<!-- <div class="container mx-auto mt-4">
   <div class="row">
     <div class="col-md-4" *ngFor="let image of images">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" *ngIf="image" [src]="image.url" alt="image.itemname">
         <div class="card-body">
           <h5 class="card-title">
-            {{image.type}} item : {{ image.itemname }}
+            {{image.type}} : {{ image.itemname }}
           </h5>
             <h6 class="card-subtitle mb-2 text-muted">
               E-Mail : {{ image.email }}
@@ -40,17 +40,65 @@
       </div>
     </div>
   </div>
+</div> -->
+<br>
+<br>
+<div class="input-group">
+  <div class="body container">
+    <input type="text" class="form-control rounded" placeholder="Search" name="search" [(ngModel)]="searchLost" autocomplete="off" aria-label="Search" aria-describedby="search-addon" />
+    <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+<br>
+<br>
+<h2 class="text-center">LOST COMODITIES</h2>
+<div class="body container">
+  <div class="card" *ngFor="let image of images | filter:searchLost">
+    <div class="card-header" >
+      <img *ngIf="image" [src]="image.url" alt="image.itemname"/>
+    </div>
+    <div class="card-body">
+      <span class="tag tag-teal">{{image.type}} : {{ image.itemname }}</span>
+      <br>
+      <h5>
+        E-Mail : {{ image.email }}
+      </h5>
+      <h5>
+        Mobile : {{ image.mobile_no }}
+      </h5>
+      <p>
+      {{ image.description }}
+      </p>
+        </div>
+  </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
+</div>
+<br>
+<br>
+<div class="input-group">
+  <div class="body container">
+    <input type="text" class="form-control rounded" placeholder="Search" name="search" [(ngModel)]="searchFound" autocomplete="off" aria-label="Search" aria-describedby="search-addon" />
+    <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+<br>
+<br>
+  <h2 class="text-center">FOUND COMODITIES</h2>
+  <div class="body container">
+    <div class="card"*ngFor="let found of founds | filter:searchFound">
+      <div class="card-header" >
+        <img *ngIf="found" [src]="found.url" alt="found.itemname"/>
+      </div>
+      <div class="card-body">
+        <span class="tag tag-teal">{{found.type}} : {{ found.itemname }}</span>
+        <br>
+        <p>
+        {{ found.question }}
+        </p>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 
 
 

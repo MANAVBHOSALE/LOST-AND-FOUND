@@ -13,6 +13,7 @@ app.use(
   })
 );
 app.use('/images', express.static(path.join('images')));
+app.use('/imagesfound', express.static(path.join('imagesfound')));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(cors());

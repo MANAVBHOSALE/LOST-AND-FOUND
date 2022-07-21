@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Router } from '@angular/router';
 import { map } from "rxjs/operators";
 import { image } from './user/image';
-
+import { imageFound } from './user/imageFound';
 //let headers = new HttpHeaders({
 //  "Content-Type": "application/json",
  // "Accept": "application/json"
@@ -29,10 +29,14 @@ import { image } from './user/image';
 })
 
 export class AuthService { 
+
   private image: image[] = [];
+  private imageFound: image[] = [];
   private image$ = new Subject<image[]>();
+  //private imageFound$ = new Subject<imageFound[]>();
   alert : boolean = false
   baseURL = 'http://localhost:4001/lost';
+  baseURLFound = 'http://localhost:4001/found';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   
   getAccessToken() {
@@ -47,10 +51,19 @@ export class AuthService {
   redirectUrl: string | null = null;
 
   constructor(private http : HttpClient, public router: Router){ }
-
+  // Create User
   registerUser(user: any){
 
     this.http.post("http://localhost:4001/user/register", user).subscribe(res =>{
+      console.log(res);
+    });
+    this.alert = true;
+  }
+
+  //Create Contact data
+  contactUser(user: any){
+
+    this.http.post("http://localhost:4001/contact", user).subscribe(res =>{
       console.log(res);
     });
     this.alert = true;
@@ -68,6 +81,19 @@ export class AuthService {
       formData.append('type', type);
       formData.append('url', url);
     return this.http.post<image>(`${this.baseURL}`, formData, {
+      reportProgress: true,
+      observe: 'events',
+    });
+  }
+
+  //Create found data
+  addfound(itemname:string, question:string, type:string, url:File) : Observable<any> {
+      var formData: any = new FormData();
+      formData.append('itemname', itemname);
+      formData.append('question', question);
+      formData.append('type', type);
+      formData.append('url', url);
+    return this.http.post<image>(`${this.baseURLFound}`, formData, {
       reportProgress: true,
       observe: 'events',
     });
@@ -104,38 +130,44 @@ export class AuthService {
   getLostData(){
     return this.http.get(`http://localhost:4001/lost`);
   }
-  // getProfiles() {
-  //   this.http
-  //     .get<{ profiles: image[] }>(this.baseURL)
-  //     .pipe(
-  //       map((profileData) => {
-  //         return profileData.profiles;
-  //       })
-  //     )
-  //     .subscribe((image) => {
-  //       this.image = image;
-  //       this.image$.next(this.image);
-  //     });
-  // }
-
-  // getProfilesStream() {
-  //   return this.image$.asObservable();
-  // }
-
-  // getGalleryById(id: string): Observable<any> {
-  //   const url = `${apiUrl}/${id}`;
-  //   return this.http.get<image>(url).pipe(
-  //     catchError(this.handleError)
-  //   );
-  // }
-  
-  // addGallery(image: image, file: File): Observable<any> {
-  //   const formData = new FormData();
-  //   formData.append('file', file);
-  //   formData.append('imageTitle', image.itemname);
-  //   //formData.append('imageDesc', image.imageDesc);
-  //   const header = new HttpHeaders();
-  //   const params = new HttpParams();
+  getFoundData(){
+    return this.http.get(`http://localhost:4001/found`);
+  }
 
 }
 
+
+
+
+// getProfiles() {
+//   this.http
+//     .get<{ profiles: image[] }>(this.baseURL)
+//     .pipe(
+//       map((profileData) => {
+//         return profileData.profiles;
+//       })
+//     )
+//     .subscribe((image) => {
+//       this.image = image;
+//       this.image$.next(this.image);
+//     });
+// }
+
+// getProfilesStream() {
+//   return this.image$.asObservable();
+// }
+
+// getGalleryById(id: string): Observable<any> {
+//   const url = `${apiUrl}/${id}`;
+//   return this.http.get<image>(url).pipe(
+//     catchError(this.handleError)
+//   );
+// }
+
+// addGallery(image: image, file: File): Observable<any> {
+//   const formData = new FormData();
+//   formData.append('file', file);
+//   formData.append('imageTitle', image.itemname);
+//   //formData.append('imageDesc', image.imageDesc);
+//   const header = new HttpHeaders();
+//   const params = new HttpParams();

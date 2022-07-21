@@ -177,7 +177,7 @@ router.put('/update/:id',async (req, res) => {
       // Validate if lost exist in our database
       const lost = await Lost.findOne({ email });
 
-      if (user && email) {
+      if (lost) {
           // Create token
           const token = jwt.sign(
             { user_id: lost._id, email },

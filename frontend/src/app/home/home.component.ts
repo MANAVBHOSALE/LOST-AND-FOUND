@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { image } from '../user/image';
-import { Subscription } from 'rxjs';
-const api = '../../WT-Project-Backend/public/images/';
+import { imageFound } from '../user/imageFound';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'], 
+  //encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   images : image[] = [];
+  founds : imageFound[] = [];
   //private profileSubscription: Subscription;
   constructor(public authService: AuthService) { }
-
+  searchLost : any;
+  searchFound : any;
   ngOnInit(): void {
     // this.authService.getProfiles();
     // this.profileSubscription = this.authService
@@ -27,6 +26,11 @@ export class HomeComponent implements OnInit {
     this.authService.getLostData().subscribe((data: any) => {
       console.log('Lost data Got Successfully!');
         this.images = data;
+    });
+    this.authService.getFoundData().subscribe((data: any) => {
+      console.log('Found data Got Successfully!');
+        this.founds = data;
+        //this.images = data;
     });
   }
 

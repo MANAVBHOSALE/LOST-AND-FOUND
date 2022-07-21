@@ -1,4 +1,10 @@
 <div class="container">
+  <div *ngIf = "alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> Your Query has been sent Successfully.
+    <button (click) = "closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
     <div style="text-align:center">
       <h2>Contact Us</h2>
     </div>
@@ -7,19 +13,13 @@
         <img src="assets/img/7.jpg" alt="MITAOE PUNE" style="width:100%">
       </div>
       <div class="column">
-        <form action="/action_page.php">
+        <form id = "formData" #userData="ngForm" (ngSubmit)="contactUser(userData.value)">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <input type="text" id="fname" autocomplete="off" name="firstname" placeholder="Your First Name" ngModel>
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
+          <input type="text" id="lname" autocomplete="off" name="lastname" placeholder="Your Last Name" ngModel>
           <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <textarea id="subject" name="subject" autocomplete="off" placeholder="Write Your Query" style="height:170px" ngModel></textarea>
           <input type="submit" value="Submit">
         </form>
       </div>
